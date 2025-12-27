@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生命树 - 轻社交平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 注册页面 -->
+        <div id="registerPage" class="page">
+            <div class="container">
+                <h1>生命树</h1>
+                <p>记录人生节点，分享生命故事</p>
+                
+                <form id="registerForm">
+                    <div class="input-group">
+                        <label for="username">用户名</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password">密码 (6位数)</label>
+                        <input type="password" id="password" name="password" required minlength="6" maxlength="6">
+                    </div>
+                    
+                    <button type="submit">注册并开始</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- 主页面（生命树） -->
+        <div id="mainPage" class="page hidden">
+            <div class="header">
+                <h2>生命树</h2>
+                <div class="user-info">
+                    <span id="currentUsername"></span>
+                    <button id="logoutBtn">退出</button>
+                </div>
+            </div>
+            
+            <div class="tree-container">
+                <div class="tree">
+                    <!-- 生命树的4个主干 -->
+                    <div class="trunk trunk-1" data-trunk="1">
+                        <div class="trunk-label">成长</div>
+                        <div class="branches branches-1">
+                            <!-- 节点将通过JS动态添加 -->
+                        </div>
+                    </div>
+                    
+                    <div class="trunk trunk-2" data-trunk="2">
+                        <div class="trunk-label">事业</div>
+                        <div class="branches branches-2">
+                            <!-- 节点将通过JS动态添加 -->
+                        </div>
+                    </div>
+                    
+                    <div class="trunk trunk-3" data-trunk="3">
+                        <div class="trunk-label">情感</div>
+                        <div class="branches branches-3">
+                            <!-- 节点将通过JS动态添加 -->
+                        </div>
+                    </div>
+                    
+                    <div class="trunk trunk-4" data-trunk="4">
+                        <div class="trunk-label">兴趣</div>
+                        <div class="branches branches-4">
+                            <!-- 节点将通过JS动态添加 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 社区页面 -->
+        <div id="communityPage" class="page hidden">
+            <div class="header">
+                <h2 id="communityTitle">树枝社区</h2>
+                <div class="user-info">
+                    <span id="communityUsername"></span>
+                    <button id="backToTreeBtn">返回生命树</button>
+                </div>
+            </div>
+            
+            <div class="community-container">
+                <div class="post-form">
+                    <textarea id="postContent" placeholder="分享你在这个人生节点的感悟..."></textarea>
+                    <button id="postBtn">发布</button>
+                </div>
+                
+                <div id="postsContainer" class="posts-container">
+                    <!-- 帖子将通过JS动态添加 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
